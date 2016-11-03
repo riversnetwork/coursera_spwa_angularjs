@@ -8,10 +8,13 @@
         $scope.message = "";
         
         $scope.checkItems = function (){
-            $scope.lunchItems = [];
             if ($scope.itemsEntered){
-                $scope.lunchItems.push($scope.itemsEntered.split(','));
-                console.log($scope.lunchItems);
+                $scope.lunchItems = $scope.itemsEntered.split(',');
+                if ($scope.lunchItems.length <= 3){
+                    $scope.message = "Enjoy!";
+                } else {
+                    $scope.message = "Too Much!";
+                }
             } else {
                 $scope.message = "Please enter data first";
             }
