@@ -12,11 +12,14 @@
                 $scope.lunchItems = $scope.itemsEntered.split(',');
                 if ($scope.lunchItems.length <= 3){
                     $scope.message = "Enjoy!";
+                    $scope.alert = "success";
                 } else {
                     $scope.message = "Too Much!";
+                    $scope.alert = "danger";
                 }
             } else {
                 $scope.message = "Please enter data first";
+                $scope.alert = "warning";
             }
         }
     }   
